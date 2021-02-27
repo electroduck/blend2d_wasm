@@ -1,3 +1,14 @@
+
+This Repository
+--------
+This is a version of Blend2D that can be compiled with Emscripten when the proper options are set.
+
+Assuming you are in a MinGW command prompt and have the `EMSCRIPTEN` environment variable set to the folder you cloned the Emscripten SDK into, you can use these commands to build:
+```
+cmake -DCMAKE_TOOLCHAIN_FILE=%EMSCRIPTEN%/cmake/Modules/Platform/Emscripten.cmake -DBLEND2D_NO_JIT=1 -DBLEND2D_NO_TLS=1 -DBLEND2D_NO_SIMD=1 -DBLEND2D_STATIC=1 -G "MinGW Makefiles" ..
+mingw32-make
+```
+
 Blend2D
 -------
 
