@@ -271,9 +271,9 @@ BLResult BL_CDECL blThreadCreate(BLThread** threadOut, const BLThreadAttributes*
 
   // We bail to the default stack-size if we are not able to probe
   // a small workable stack-size. 8MB is a safe guess if this fails.
-  err = pthread_attr_getstacksize(&ptAttr, &defaultStackSize);
+  /*err = pthread_attr_getstacksize(&ptAttr, &defaultStackSize);
   if (err)
-    defaultStackSize = 1024u * 1024u * 8u;
+    defaultStackSize = 1024u * 1024u * 8u;*/
 
   // This should never fail, but...
   err = pthread_attr_setdetachstate(&ptAttr, PTHREAD_CREATE_DETACHED);
